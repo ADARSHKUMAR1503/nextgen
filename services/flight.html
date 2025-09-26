@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Ticket Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .hero-section {
+            /* background: linear-gradient(rgba(53, 106, 178, 0.7), rgba(53, 106, 178, 0.7)), no-repeat center center; */
+            background: url("../img/flight_banner.png");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- Hero Section -->
+
+    <div class="hero-section" style="background-image: url('../img/ftb.png');">
+        <div class="container py-5">
+            <div class="text-center gsap-fade-in mb-5">
+                <h1 class="display-3 fw-bolder text-white mb-3">
+                    <!-- Fly Higher, Spend Less -->
+                </h1>
+                <p class="fs-4 text-light fw-semibold">
+                    <!-- Domestic & International flights at competitive fares. -->
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 ">
+
+        <!-- Header & Hero Section -->
+        <!-- <div class="text-center gsap-fade-in mb-5">
+            <h1 class="display-3 fw-bolder text-dark mb-3">
+                Fly Higher, Spend Less
+            </h1>
+            <p class="fs-4 text-primary fw-semibold">
+                Domestic & International flights at competitive fares.
+            </p>
+        </div> -->
+
+        <!-- Flight Booking Card -->
+        <div class="booking-card card shadow-lg border-0 gsap-fade-in">
+            <div class="card-body p-4 p-md-5">
+
+                <!-- Travel Type Tabs -->
+                <div class="d-flex gap-3 mb-4 pb-3 border-bottom">
+                    <button id="roundTripBtn" class=" btn btn-primary rounded-pill fw-semibold shadow-sm">
+                        Round Trip
+                    </button>
+                    <button id="oneWayBtn" class="gsap-fade-in btn btn-light text-secondary rounded-pill fw-semibold">
+                        One Way
+                    </button>
+                </div>
+
+                <form id="flightBookingForm" class="row g-4">
+
+                    <!-- Origin and Destination -->
+                    <div class="col-md-6 gsap-fade-in">
+                        <label for="origin"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-plane-departure fa-sm me-2 text-primary"></i>
+                            Origin City
+                        </label>
+                        <input type="text" id="origin" name="origin" placeholder="e.g., New York (JFK)"
+                            class="form-control" required>
+                    </div>
+                    <div class="col-md-6 gsap-fade-in">
+                        <label for="destination"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-plane-arrival fa-sm me-2 text-primary"></i>
+                            Destination City
+                        </label>
+                        <input type="text" id="destination" name="destination" placeholder="e.g., London (LHR)"
+                            class="form-control" required>
+                    </div>
+
+                    <!-- Dates and Passengers -->
+                    <div class="col-6 col-lg-3 gsap-fade-in">
+                        <label for="departureDate"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-calendar-day fa-sm me-2 text-primary"></i>
+                            Departure
+                        </label>
+                        <input type="date" id="departureDate" name="departureDate" class="form-control" required>
+                    </div>
+                    <div id="returnDateField" class="col-6 col-lg-3 gsap-fade-in">
+                        <label for="returnDate"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-calendar-check fa-sm me-2 text-primary"></i>
+                            Return
+                        </label>
+                        <input type="date" id="returnDate" name="returnDate" class="form-control">
+                    </div>
+                    <div class="col-6 col-lg-3 gsap-fade-in">
+                        <label for="passengers"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-users fa-sm me-2 text-primary"></i>
+                            Passengers
+                        </label>
+                        <input type="number" id="passengers" name="passengers" min="1" value="1" class="form-control"
+                            required>
+                    </div>
+                    <div class="col-6 col-lg-3 gsap-fade-in">
+                        <label for="class"
+                            class="form-label d-flex align-items-center text-sm font-medium text-gray-700 mb-1">
+                            <i class="fa-solid fa-suitcase fa-sm me-2 text-primary"></i>
+                            Class
+                        </label>
+                        <select id="class" name="class" class="form-select">
+                            <option>Economy</option>
+                            <option>Premium Economy</option>
+                            <option>Business</option>
+                            <option>First</option>
+                        </select>
+                    </div>
+
+                    <!-- Submission Button -->
+                    <div class="col-12 pt-4 d-flex justify-content-center gsap-fade-in">
+                        <button type="submit"
+                            class="btn btn-lg btn-primary rounded-pill fw-bold shadow-lg w-100 w-sm-auto px-5 py-3 text-uppercase">
+                            Find Flights
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+    <!-- External Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <!-- ✅ Load GSAP FIRST -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- ✅ THEN run your custom logic -->
+    <script>
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from(".gsap-fade-in", {
+                duration: 1,
+                y: 30,
+                opacity: 0,
+                stagger: 0.15,
+                ease: "power2.out"
+            });
+        });
+
+        // Form Logic for Round Trip / One Way
+        const roundTripBtn = document.getElementById('roundTripBtn');
+        const oneWayBtn = document.getElementById('oneWayBtn');
+        const returnDateField = document.getElementById('returnDateField');
+        const returnDateInput = document.getElementById('returnDate');
+
+        function setTripType(isRoundTrip) {
+            if (isRoundTrip) {
+                // Round Trip selected
+                roundTripBtn.classList.remove('btn-light', 'text-secondary');
+                roundTripBtn.classList.add('btn-primary', 'shadow-sm');
+                oneWayBtn.classList.remove('btn-primary', 'shadow-sm');
+                oneWayBtn.classList.add('btn-light', 'text-secondary');
+
+                returnDateField.style.display = 'block';
+                returnDateInput.required = false; // Optional, can be made required in a real app
+
+                // GSAP to show the field
+                gsap.to(returnDateField, { duration: 0.3, opacity: 1, height: 'auto' });
+            } else {
+                // One Way selected
+                oneWayBtn.classList.remove('btn-light', 'text-secondary');
+                oneWayBtn.classList.add('btn-primary', 'shadow-sm');
+                roundTripBtn.classList.remove('btn-primary', 'shadow-sm');
+                roundTripBtn.classList.add('btn-light', 'text-secondary');
+
+                // Hide and clear return date
+                returnDateInput.value = '';
+                returnDateInput.required = false;
+
+                // GSAP to hide the field
+                gsap.to(returnDateField, {
+                    duration: 0.3,
+                    opacity: 0,
+                    height: 0,
+                    padding: 0,
+                    onComplete: () => {
+                        returnDateField.style.display = 'none';
+                    }
+                });
+            }
+        }
+
+        // Initialize to Round Trip
+        setTripType(true);
+
+        roundTripBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setTripType(true);
+        });
+
+        oneWayBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            setTripType(false);
+        });
+
+        // Form submission handling (Prevent default for demonstration)
+        document.getElementById('flightBookingForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // In a real app, this is where you'd fetch flight data
+            console.log('Flight search submitted!');
+            // Replace with a custom modal/toast in a production app
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Searching...';
+            submitButton.disabled = true;
+
+            setTimeout(() => {
+                submitButton.textContent = 'Find Flights';
+                submitButton.disabled = false;
+                alert('Search initiated! (Form submission prevented for demo)');
+            }, 1500);
+        });
+    </script>
+
+    <!-- (Optional) Your own external script -->
+    <script src="../js/script.js"></script>
+
+
+</body>
+
+</html>

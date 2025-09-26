@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .landing-banner {
+            background-image: url('./img/flight4.png');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            /* Optional dark overlay */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .banner-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .banner-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .banner-content .btn {
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+        }
+
+        .banner-content .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- HTML -->
+    <section class="landing-banner">
+        <div class="overlay">
+            <div class="banner-content">
+                <h1>Your One-Stop Travel Partner</h1>
+                <p>Flights, Hotels, Visas, Insurance & More – All in One Place</p>
+                <!-- <a href="contact.html" class="btn btn-primary">Contact Us</a> -->
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding">
+        <div class="container">
+            <div class="text-center" style="background-color: darkturquoise;  border-radius: 25px; ">
+                <h2 class="section-title">Our Best Services</h2>
+                <p class="section-subtitle" style="color: white;">Comprehensive solutions for a hassle-free travel
+                    experience.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/flight.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/flight5.png" alt=""></div>
+                            <h5><i class="fas fa-plane-departure"></i> Flight Ticket Booking</h5>
+                            <p>Domestic & International flights at competitive fares.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/hotel.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/hotel2.png" alt=""></div>
+                            <h5><i class="fas fa-hotel"></i> Hotel Reservations</h5>
+                            <p>Wide range of budget to luxury stays worldwide.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/gamca.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/gamca.png" alt=""></div>
+                            <h5><i class="fas fa-file-medical"></i> GAMCA Medical Test</h5>
+                            <p>Hassle-free appointment scheduling for GCC medicals.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/visa.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/nvisa.png" alt=""></div>
+                            <h5><i class="fas fa-passport"></i> Visa Assistance</h5>
+                            <p>Support for tourist, business, and work visa applications.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/skill.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/skill.png" alt=""></div>
+                            <h5><i class="fas fa-briefcase"></i> SVP Appointments</h5>
+                            <p>Mandatory certification booking for Saudi visa stamping.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/holiday.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/holiday2.png" alt=""></div>
+                            <h5><i class="fas fa-umbrella-beach"></i> Holiday Packages</h5>
+                            <p>Customized domestic & international travel packages.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/airport.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/transfer.png" alt=""></div>
+                            <h5><i class="fas fa-car"></i> Airport Transfers</h5>
+                            <p>Easy and reliable transport arrangements and car rentals.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/travel_insurance.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/insurance.png" alt=""></div>
+                            <h5><i class="fas fa-shield-alt"></i> Travel Insurance</h5>
+                            <p>Secure and reliable travel coverage for peace of mind.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- <div class="col-lg-4 col-md-6">
+                    <a href="./services/contact.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/support.png" alt=""></div>
+                            <h5><i class="fas fa-headset"></i> 24/7 Customer Support</h5>
+                            <p>Dedicated assistance for all your travel needs, anytime.</p>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/contact.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/platform.png" alt=""></div>
+                            <h5><i class="fas fa-mobile-alt"></i> One-Stop Digital Platform</h5>
+                            <p>All travel solutions under a single website.</p>
+                        </div>
+                    </a>
+                </div> -->
+
+                <div class="col-lg-4 col-md-6">
+                    <a href="./services/mofa_payment.html">
+                        <div class="service-card">
+                            <div class="icon"><img src="./img/mofa.png" alt=""></div>
+                            <h5><i class="fas fa-university"></i> MOFA Payment</h5>
+                            <p>Ministry of Foreign Affairs</p>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <div id="footer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</body>
+
+</html>

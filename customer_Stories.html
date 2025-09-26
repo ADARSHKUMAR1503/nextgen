@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials & Reviews</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        .testimonial-header {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 4rem 1.5rem;
+            text-align: center;
+        }
+
+        .testimonial-header h1 {
+            font-weight: 700;
+        }
+
+        .ratings-summary {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .star {
+            color: #ffc107;
+        }
+
+        .card.testimonial-card {
+            border: none;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            /* Initially hidden for GSAP */
+            transform: translateY(30px);
+            /* Initially moved down for GSAP */
+        }
+
+        .card.testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #007bff;
+        }
+
+        .badge {
+            font-size: 0.85rem;
+            padding: 0.5em 0.9em;
+        }
+
+        .featured-in .logo-placeholder {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #adb5bd;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: opacity 0.3s ease, filter 0.3s ease;
+        }
+
+        .featured-in .logo-placeholder:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .cta-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+        }
+
+        .rating-container {
+            border: 4px solid blue;
+            /* Blue border */
+            border-radius: 100px;
+            /* Rounded corners */
+            padding: 20px;
+            /* Add some padding inside */
+            display: inline-block;
+            /* Make it fit the content size */
+        }
+    </style>
+</head>
+
+<body>
+    <div id="header"></div>
+    <!-- Header Section -->
+    <header class="testimonial-header mt-3">
+        <div class="container">
+            <h1 class="display-4">Customer Stories & Reviews</h1>
+            <p class="lead">See how our services have made a difference. Your trust is our biggest reward.</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container  my-5">
+        <!-- Ratings Summary -->
+        <section class=" ratings-summary py-5 mb-5">
+            <div class="container">
+                <div class="section-header mb-5 text-center">
+                    <!-- <p class="text-uppercase fw-bold text-muted mb-2">Social Proof</p> -->
+                    <h1 class="display-4 fw-bold text-dark text-center">Trusted by thousands of travelers
+                        worldwide</h1>
+                    <div class="d-flex justify-content-center align-items-center flex-wrap gap-3 mt-4">
+                        <div class="star-rating fs-3">
+                            <span class="star fs-4">&#9733;</span>
+                            <span class="star fs-4">&#9733;</span>
+                            <span class="star fs-4">&#9733;</span>
+                            <span class="star fs-4">&#9733;</span>
+                            <span class="star fs-4">&#9733;</span>
+                            <!-- <i class="fas fa-star-half-alt">&#9733;</i> -->
+                        </div>
+                        <span class="fs-4 fw-semibold text-dark">4.8 / 5.0</span>
+                        <span class="badge badge-pill text-bg-dark rounded-pill py-2 px-3 fw-normal">Based on 1,200+
+                            reviews</span>
+                    </div>
+                    <span class="badge badge-pill text-bg-primary rounded-pill m-2 px-3 ">Customer Service
+                        Excellence</span>
+                    <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis m-2 px-3 ">Speedy
+                        Process</span>
+                    <span class="badge rounded-pill bg-warning-subtle text-warning-emphasis m-2 px-3 ">Ease of
+                        Use</span>
+                </div>
+            </div>
+        </section>
+        <!-- <section class="ratings-summary mb-5">
+            <div class="row align-items-center text-center">
+                <div class="col-md-4">
+                    <div class="rating-container">
+
+                        <h2 class="display-5 fw-bold">4.9<span class="fs-4">/5</span></h2>
+                    </div>
+                    <div>
+                        <span class="star fs-4">&#9733;</span>
+                        <span class="star fs-4">&#9733;</span>
+                        <span class="star fs-4">&#9733;</span>
+                        <span class="star fs-4">&#9733;</span>
+                        <span class="star fs-4">&#9733;</span>
+                    </div>
+
+                    <p class="text-muted mt-2">Based on 1,200+ Reviews</p>
+                </div>
+                <div class="col-md-8">
+                    <div class="d-flex flex-wrap justify-content-center justify-content-md-start gap-2">
+                        <span class="badge rounded-pill bg-success-subtle text-success-emphasis">Great Customer
+                            Service</span>
+                        <span class="badge rounded-pill bg-primary-subtle text-primary-emphasis">Speedy Process</span>
+                        <span class="badge rounded-pill bg-warning-subtle text-warning-emphasis">Ease of Use</span>
+                        <span class="badge rounded-pill bg-info-subtle text-info-emphasis">Hassle-Free</span>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- As Featured In -->
+        <!-- <section class="featured-in text-center my-5 py-4">
+            <h3 class="text-muted fw-light mb-5" style="letter-spacing: 0.1em; font-size: 0.9rem;">AS FEATURED IN</h3>
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-5">
+                <div class="logo-placeholder"><b>Travel</b>Weekly</div>
+                <div class="logo-placeholder"><i>Journey</i>MAG</div>
+                <div class="logo-placeholder">Global Nomad</div>
+                <div class="logo-placeholder">The Biz Journal</div>
+                <div class="logo-placeholder">SkyHigh Times</div>
+            </div>
+        </section> -->
+
+        <!-- Testimonials Grid -->
+        <section class="testimonials">
+            <h2 class="text-center mb-5 fw-bold">What Our Customers Are Saying</h2>
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/EFEFEF/333333?text=AV" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">Alex Vargas</h5>
+                            <p class="text-muted small">Last-Minute Traveler</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"I needed a flight to a conference on extremely short notice. I thought
+                                it was impossible, but their team found me a perfect, affordable flight within an hour.
+                                Truly a lifesaver!"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/D8BFD8/333333?text=SP" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">Samantha Patel</h5>
+                            <p class="text-muted small">Family Vacationer</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"Planning a family holiday used to be stressful. With their holiday
+                                package, everything from flights to hotels was handled. It was the most relaxing and
+                                hassle-free vacation we've ever had."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/ADD8E6/333333?text=DC" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">David Chen</h5>
+                            <p class="text-muted small">Business Professional</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"The visa application process for my work trip was daunting. Their
+                                experts guided me through every step, ensuring all my documents were perfect. My visa
+                                was approved quickly and without any issues!"</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/FFC0CB/333333?text=MJ" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">Maria Jones</h5>
+                            <p class="text-muted small">Explorer</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"The customer service is top-notch. They were so patient and helpful in
+                                planning my custom multi-city trip. They really listen and tailor the experience to you.
+                                Highly recommended for personalized travel."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/90EE90/333333?text=RF" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">Ricardo Fischer</h5>
+                            <p class="text-muted small">Group Organizer</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"Organizing a trip for 10 people seemed like a nightmare, but their
+                                platform made it incredibly easy. We could all see the itinerary and costs in one place.
+                                The speed and efficiency were amazing."</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card testimonial-card p-4 h-100">
+                        <div class="card-body text-center">
+                            <img src="https://placehold.co/80x80/F0E68C/333333?text=LW" alt="Customer Photo"
+                                class="mb-3">
+                            <h5 class="card-title mb-1">Li Wei</h5>
+                            <p class="text-muted small">First-Time User</p>
+                            <div class="mb-3">
+                                <span class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span><span class="star">&#9733;</span><span
+                                    class="star">&#9733;</span>
+                            </div>
+                            <p class="card-text">"I was nervous about booking online, but the website was so easy to
+                                use. The instructions were clear, the layout was clean, and I found exactly what I
+                                needed in minutes. A great experience from start to finish."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section text-center p-5 my-5">
+            <div class="container">
+                <h2 class="display-6 fw-bold">Ready to experience the difference?</h2>
+                <p class="lead text-muted my-3">Join thousands of satisfied customers and let us make your next journey
+                    your best one yet.</p>
+                <a href="#" class="btn btn-primary btn-lg mt-3 px-5 py-3">Get Started Now</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <!-- Custom JS for Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            gsap.registerPlugin(ScrollTrigger);
+
+            // Animate testimonial cards on scroll
+            gsap.utils.toArray('.testimonial-card').forEach(card => {
+                gsap.fromTo(card,
+                    { opacity: 0, y: 50 },
+                    {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.8,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: card,
+                            start: 'top 85%', // when the top of the trigger hits 85% of the viewport height
+                            toggleActions: 'play none none none',
+                        }
+                    }
+                );
+            });
+
+            // Animate header and summary
+            gsap.from('.testimonial-header', { opacity: 0, duration: 1, ease: 'power2.inOut' });
+            gsap.from('.ratings-summary', { opacity: 0, y: -30, duration: 1, delay: 0.3, ease: 'power2.out' });
+
+            // Animate "As Featured In" section
+            gsap.from('.featured-in', {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.featured-in',
+                    start: 'top 90%',
+                }
+            });
+
+            // Animate CTA section
+            gsap.from('.cta-section', {
+                opacity: 0,
+                scale: 0.95,
+                duration: 1,
+                ease: 'power3.out',
+                scrollTrigger: {
+                    trigger: '.cta-section',
+                    start: 'top 85%',
+                }
+            });
+        });
+    </script>
+    <script src="./js/script.js"></script>
+
+</body>
+
+</html>

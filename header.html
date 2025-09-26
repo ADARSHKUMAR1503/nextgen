@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="../img/NGLC.png" alt="" width="200" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link " href="/">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        aria-expanded="false">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="/services/flight.html">Flight Ticket Booking</a></li>
+                        <li><a class="dropdown-item" href="/services/hotel.html">Hotel Reservations</a></li>
+                        <li><a class="dropdown-item" href="/services/gamca.html">GAMCA Medical Test</a></li>
+                        <li><a class="dropdown-item" href="/services/visa.html">Visa Assistance</a></li>
+                        <li><a class="dropdown-item" href="/services/skill.html">SVP Appointments</a></li>
+                        <li><a class="dropdown-item" href="/services/holiday.html">Holiday Packages</a></li>
+                        <li><a class="dropdown-item" href="/services/airport.html">Airport Transfers</a></li>
+                        <li><a class="dropdown-item" href="/services/travel_insurance.html">Travel Insurance</a></li>
+                        <li><a class="dropdown-item" href="/services/mofa_payment.html">MOFA Payment</a></li>
+                    </ul>
+                </li>
+
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/services/flight&room.html">Flight + Rooms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/customer_Stories.html">Customers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">contact</a>
+                </li>
+            </ul>
+            <!-- <div>
+                <a href="#" class="btn btn-outline-primary me-2">Login</a>
+                <a href="#" class="btn btn-primary">Register</a>
+            </div> -->
+        </div>
+    </div>
+</nav>
+<script>
+    // Get current page URL path
+    const currentPath = window.location.pathname;
+
+    // Get all nav links inside navbar-nav
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+
+    navLinks.forEach(link => {
+        // Extract href path from link (without domain)
+        const linkPath = new URL(link.href).pathname;
+
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+</script>

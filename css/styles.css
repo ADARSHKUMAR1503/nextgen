@@ -1,0 +1,864 @@
+  body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+  }
+
+  /* Color Palette */
+  :root {
+      --primary-blue: #356ab2;
+      --secondary-green: #63bc63;
+      --accent-light-blue: #4caf50;
+      --accent-orange: #ee9b00;
+      --text-dark: #001219;
+      --text-light: #e9d8a6;
+      --background-light: #ffffff;
+  }
+
+  /* --- Components --- */
+  .navbar {
+      background-color: var(--background-light);
+      padding: 15px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+  }
+
+  /* Enhanced shadow on scroll (you can add this with JS) */
+  .navbar.scrolled {
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+      background-color: rgba(255, 255, 255, 0.95);
+  }
+
+  /* Navbar Brand/Logo */
+  .navbar-brand {
+      font-weight: 700;
+      color: var(--primary-blue);
+      transition: transform 0.3s ease;
+  }
+
+  .navbar-brand:hover {
+      transform: scale(1.05);
+  }
+
+  .navbar-brand img {
+      height: 50px;
+      width: 200px;
+      transition: filter 0.3s ease;
+  }
+
+  .navbar-brand:hover img {
+      filter: brightness(1.1);
+  }
+
+  /* Navigation Links Container */
+  .navbar-nav {
+      align-items: center;
+      gap: 10px;
+  }
+
+  /* Individual Navigation Links */
+  .navbar-nav .nav-link {
+      color: var(--primary-blue) !important;
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0 15px;
+      padding: 12px 0 !important;
+      position: relative;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border-radius: 8px;
+  }
+
+  /* Active State Styling */
+  .navbar-nav .nav-link.active {
+      color: var(--secondary-green) !important;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(99, 188, 99, 0.1), rgba(99, 188, 99, 0.05));
+      padding: 12px 18px !important;
+      border-radius: 25px;
+  }
+
+  /* Hover Effects for Regular Links (excluding Services dropdown) */
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover {
+      color: var(--secondary-green) !important;
+      transform: translateY(-2px);
+  }
+
+  /* Bottom Border Effect for Regular Links */
+  .navbar-nav .nav-link:not(.dropdown-toggle)::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      width: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--secondary-green), var(--accent-light-blue));
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+  }
+
+  .navbar-nav .nav-link:not(.dropdown-toggle):hover::after,
+  .navbar-nav .nav-link:not(.dropdown-toggle).active::after {
+      width: 80%;
+  }
+
+  /* Services Dropdown Specific Styling */
+  .nav-item.dropdown .nav-link.dropdown-toggle {
+      color: var(--primary-blue) !important;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s ease;
+  }
+
+  .nav-item.dropdown .nav-link.dropdown-toggle:hover {
+      color: var(--secondary-green) !important;
+      background: linear-gradient(135deg, rgba(99, 188, 99, 0.08), rgba(99, 188, 99, 0.03));
+      border-radius: 25px;
+      /* padding: 10px 10px !important; */
+  }
+
+  /* Dropdown Arrow Styling */
+  .nav-link.dropdown-toggle::after {
+      display: inline-block;
+      margin-left: 8px;
+      vertical-align: middle;
+      font-size: 0.8em;
+      border-top: 0.3em solid;
+      border-right: 0.3em solid transparent;
+      border-bottom: 0;
+      border-left: 0.3em solid transparent;
+      transition: transform 0.3s ease;
+  }
+
+  .nav-item.dropdown:hover .dropdown-toggle::after {
+      transform: rotate(180deg);
+  }
+
+  .dropdown-menu {
+      border: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      background-color: var(--background-light);
+      /* padding: 15px 0;
+      margin-top: 15px; */
+      min-width: 250px;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Show Dropdown on Hover with Animation */
+  .nav-item.dropdown:hover .dropdown-menu,
+  .nav-item.dropdown .dropdown-menu:hover {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      display: block;
+  }
+
+
+  /* Dropdown Items */
+  .dropdown-item {
+      color: var(--primary-blue);
+      padding: 12px 25px;
+      font-weight: 500;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .dropdown-item::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(99, 188, 99, 0.1), rgba(99, 188, 99, 0.05));
+      transition: width 0.3s ease;
+      z-index: -1;
+  }
+
+  .dropdown-item:hover {
+      background-color: transparent;
+      color: var(--secondary-green);
+      transform: translateX(8px);
+      padding-left: 33px;
+  }
+
+  .dropdown-item:hover::before {
+      width: 100%;
+  }
+
+  /* Mobile Toggler Styling */
+  .navbar-toggler {
+      border: none;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      background: linear-gradient(135deg, rgba(99, 188, 99, 0.1), rgba(99, 188, 99, 0.05));
+  }
+
+  .navbar-toggler:hover {
+      background: linear-gradient(135deg, rgba(99, 188, 99, 0.2), rgba(99, 188, 99, 0.1));
+      transform: scale(1.05);
+  }
+
+  .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2899, 188, 99, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* Responsive Design */
+  @media (max-width: 991.98px) {
+      .navbar-collapse {
+          background: var(--background-light);
+          border-radius: 15px;
+          margin-top: 15px;
+          padding: 20px;
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-nav .nav-link {
+          margin: 8px 0;
+          padding: 15px 20px !important;
+          border-radius: 12px;
+          transition: all 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover {
+          background: linear-gradient(135deg, rgba(99, 188, 99, 0.1), rgba(99, 188, 99, 0.05));
+          transform: translateX(10px);
+      }
+
+      .navbar-nav .nav-link::after {
+          display: none;
+      }
+
+      .dropdown-menu {
+          position: static !important;
+          transform: none !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+          margin: 10px 0 0 0;
+          background: linear-gradient(135deg, rgba(99, 188, 99, 0.03), rgba(99, 188, 99, 0.01));
+      }
+
+      .dropdown-item {
+          padding-left: 35px;
+          font-size: 0.95rem;
+      }
+  }
+
+  /* Additional Animation for Page Load */
+  @keyframes fadeInDown {
+      from {
+          opacity: 0;
+          transform: translateY(-30px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  .navbar {
+      animation: fadeInDown 0.6s ease-out;
+  }
+
+  /* Smooth scroll padding adjustment for fixed navbar */
+  html {
+      scroll-padding-top: 80px;
+  }
+
+  /* Enhanced focus states for accessibility */
+
+  .dropdown-item:focus {
+      outline: 2px solid var(--secondary-green);
+      outline-offset: 2px;
+      border-radius: 8px;
+  }
+
+  .btn-primary {
+      background-color: var(--secondary-green);
+      border-color: var(--secondary-green);
+      border-radius: 20px;
+      padding: 8px 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+  }
+
+  .btn-primary:hover {
+      background-color: var(--primary-blue);
+      border-color: var(--primary-blue);
+      transform: translateY(-2px);
+  }
+
+  .btn-outline-primary {
+      color: var(--secondary-green);
+      border-color: var(--secondary-green);
+      border-radius: 20px;
+      padding: 8px 25px;
+      font-weight: 500;
+      transition: all 0.3s;
+  }
+
+  .btn-outline-primary:hover {
+      background-color: var(--secondary-green);
+      color: white;
+  }
+
+  /* --- Sections --- */
+  .section-padding {
+      padding: 30px 0;
+  }
+
+  .section-title {
+      color: var(--primary-blue);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+  }
+
+  .section-subtitle {
+      color: var(--secondary-green);
+      font-weight: 500;
+      margin-bottom: 3rem;
+      letter-spacing: 1px;
+      padding-bottom: 7px;
+  }
+
+  /* Hero Section */
+  .hero {
+      /* background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://placehold.co/1920x1080/e0f2f1/005f73?text=Travel+Background') no-repeat center center/cover; */
+      padding: 100px 0;
+  }
+
+  .hero {
+      position: relative;
+      background: linear-gradient(rgb(12 19 22 / 85%), rgba(3, 169, 244, 0.85)), url(/img/ftb2.png  ) no-repeat center center / cover;
+      color: #fff;
+      padding: 100px 0;
+      overflow: hidden;
+  }
+
+  .hero h1 .highlight {
+      color: #fff700;
+      /* optional highlight color */
+  }
+
+  .hero .img-container {
+      margin-bottom: 20px;
+  }
+
+  .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--primary-blue);
+  }
+
+  .hero h1 .highlight {
+      color: var(--secondary-green);
+  }
+
+  .hero-images .img-container {
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+  }
+
+  .hero-images .col-md-4:nth-child(2) {
+      margin-top: 2rem;
+  }
+
+  .hero-images {
+      margin-top: 2rem;
+  }
+
+  .img-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      height: 100%;
+      transition: transform 0.3s ease;
+  }
+
+  .img-card:hover {
+      transform: scale(1.02);
+  }
+
+  .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+  }
+
+  .img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      padding: 15px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+  }
+
+  /* Staggered second image */
+  .img-card.staggered {
+      margin-top: 40px;
+      /* Push it down a bit */
+  }
+
+  /* Optional: on small screens, remove the stagger for stacking */
+  @media (max-width: 767.98px) {
+      .img-card.staggered {
+          margin-top: 0;
+      }
+  }
+
+  .img-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  }
+
+
+  /* Services Section */
+  .service-card {
+      background-color: var(--background-light);
+      border-radius: 15px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+  }
+
+  a {
+      text-decoration: none;
+      color: inherit;
+  }
+
+  .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .service-card .icon {
+      font-size: 2.5rem;
+      color: var(--secondary-green);
+      margin-bottom: 1.5rem;
+  }
+
+  .service-card h5 {
+      color: var(--primary-blue);
+      font-weight: 600;
+  }
+
+  /* Holiday Packages Section */
+  .package-card {
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+      color: white;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .package-card img {
+      transition: transform 0.5s ease;
+  }
+
+  .package-card:hover img {
+      transform: scale(1.1);
+  }
+
+  .package-card .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      padding: 40px 20px 20px;
+  }
+
+  .package-card h5 {
+      font-weight: 600;
+      margin-bottom: 0;
+  }
+
+  /* Why Choose Us Section */
+  .why-us-img {
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .stats-box {
+      background: var(--accent-light-blue);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+  }
+
+  .stats-box .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+  }
+
+  .stats-box .text {
+      font-size: 1rem;
+  }
+
+  /* Footer */
+  .footer {
+      background-color: var(--primary-blue);
+      color: white;
+  }
+
+  .footer a {
+      /* color: var(--accent-light-blue); */
+      text-decoration: none;
+      transition: color 0.3s;
+  }
+
+  .footer a:hover {
+      color: var(--accent-light-blue);
+  }
+
+  .footer .social-icons a {
+      font-size: 1.5rem;
+      margin: 0 10px;
+  }
+
+  .icon img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+  }
+
+  /* .text-center {
+      background: darkturquoise;
+      border-radius: 25px;
+  }
+
+  .text-center .section-subtitle {
+      color: white;
+  } */
+  .hero-section h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+
+  .hero-section p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+  }
+
+  .booking-form-card {
+      background-color: var(--background-light);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      /* margin-top: -50px; */
+      position: relative;
+      z-index: 10;
+  }
+
+  .booking-tabs .nav-link {
+      color: var(--text-dark);
+      border: none;
+      border-bottom: 3px solid transparent;
+      font-weight: bold;
+  }
+
+  .booking-tabs .nav-link.active {
+      color: var(--primary-blue);
+      border-bottom-color: var(--primary-blue);
+  }
+
+  /* .btn-primary {
+      background-color: var(--primary-blue);
+      border-color: var(--primary-blue);
+      border-radius: 50px;
+      padding: 10px 30px;
+      font-size: 1.1rem;
+  }
+
+  .btn-primary:hover {
+      background-color: #2b5996;
+      border-color: #2b5996;
+  } */
+
+  .form-control,
+  .form-select {
+      border-radius: 10px;
+      padding: 10px;
+  }
+
+  .featured-routes {
+      background-color: #ffffff;
+      padding: 60px 0;
+      text-align: center;
+  }
+
+  .featured-routes .route-card {
+      background-color: #f8f9fa;
+      border-radius: 15px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      height: 100%;
+  }
+
+  .featured-routes .route-card:hover {
+      transform: translateY(-5px);
+  }
+
+  .featured-routes .route-card img {
+      border-radius: 10px;
+      margin-bottom: 10px;
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+  }
+
+  .featured-routes .route-card h6 {
+      font-weight: bold;
+      color: var(--primary-blue);
+  }
+
+  .featured-routes .route-card p {
+      font-size: 0.8rem;
+      color: #6c757d;
+      margin-bottom: 0;
+  }
+
+  .why-book {
+      padding: 60px 0;
+      background-color: #e9ecef;
+      text-align: center;
+  }
+
+  .why-book .feature-card {
+      background-color: var(--background-light);
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      height: 100%;
+  }
+
+  .why-book .feature-card .icon-circle {
+      width: 80px;
+      height: 80px;
+      background-color: var(--accent-orange);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+  }
+
+  .why-book .feature-card .icon-circle i {
+      font-size: 2.5rem;
+      color: white;
+  }
+
+  .why-book .feature-card h5 {
+      font-weight: bold;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+  }
+
+  .why-book .feature-card p {
+      font-size: 0.9rem;
+      color: #6c757d;
+  }
+
+  /* --- Enhanced NextGen Contact Section Styles --- */
+
+  .nextgen-contact-enhanced {
+      /* Tweaked gradient angle and colors for a fresh look */
+      background: linear-gradient(135deg, #0984e3, #00b894);
+      color: white;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      padding: 3rem 0;
+      /* Increased padding for better spacing */
+  }
+
+  .nextgen-contact-enhanced h2 {
+      font-weight: 700;
+      /* Bold */
+      font-size: 2.8rem;
+  }
+
+  .nextgen-contact-enhanced .lead {
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 3rem;
+  }
+
+  /* The main container with the "frosted glass" effect */
+  .contact-wrapper {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      /* For Safari */
+      border: 1px solid rgba(255, 255, 255, 0.18);
+  }
+
+  /* --- Left Side: Contact Information --- */
+  .contact-info h3 {
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+  }
+
+  .contact-info .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+  }
+
+  .contact-info .info-item i {
+      font-size: 1.5rem;
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      margin-right: 15px;
+      transition: background 0.3s ease;
+  }
+
+  .contact-info .info-item:hover i {
+      background: rgba(255, 255, 255, 0.3);
+  }
+
+  .contact-info .info-item p {
+      margin: 0;
+      line-height: 1.4;
+      font-size: 0.95rem;
+  }
+
+  /* --- Right Side: Contact Form --- */
+  .contact-form .form-control {
+      background: #ffffff8f;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 0.9rem 1.2rem;
+      color: white;
+      transition: background 0.3s ease;
+  }
+
+  .contact-form .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.7);
+  }
+
+  .contact-form .form-control:focus {
+      background: #030c0e40;
+      color: white;
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.15);
+  }
+
+  .contact-form .submit-btn {
+      background-color: #fff;
+      color: #00b894;
+      padding: 0.75rem 2.5rem;
+      border-radius: 50px;
+      font-weight: bold;
+      border: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .contact-form .submit-btn:hover {
+      background-color: #00d2b3;
+      /* A lighter shade for hover */
+      color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .contact-card {
+      background-color: #fff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      color: #0984e3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      /* force full height */
+  }
+
+  .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Make all cards the same height */
+  .contact-details .contact-card {
+      min-height: 100%;
+  }
+
+  /* Icon Circle */
+  .icon-circle {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #0984e3, #00b894);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+
+  /* Heading style */
+  .contact-card h5 {
+      margin-bottom: 15px;
+      font-weight: 600;
+  }
+
+  /* List and paragraph styles */
+  .contact-card ul,
+  .contact-card p {
+      color: #2d3436;
+      margin: 5px 0;
+  }
+
+  .contact-card ul {
+      padding-left: 0;
+      list-style: none;
+  }
+
+  /* .contact-card li::before {
+        content: "âœ”ï¸";
+        margin-right: 8px;
+        color: #00b894;
+    } */

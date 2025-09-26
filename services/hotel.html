@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservations</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+
+<body>
+
+    <div id="header"></div>
+
+    <!-- <div class="container my-5 pt-5"> -->
+    <!-- <h1 class="text-center mb-4">Hotel Reservations</h1>
+        <p class="text-center lead">Find your perfect stay, from budget-friendly options to luxury resorts.</p>
+
+        <div class="row mt-5">
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="../img/hotel.png" class="card-img-top" alt="Luxury Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Luxury Suite at the Grand Plaza</h5>
+                        <p class="card-text">Experience unparalleled luxury with breathtaking city views, a private
+                            jacuzzi, and 24/7 concierge service.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-star text-warning"></i> 5-Star Rating</li>
+                            <li><i class="fas fa-map-marker-alt text-danger"></i> New York, USA</li>
+                            <li><i class="fas fa-bed text-primary"></i> King-sized bed</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card">
+                    <img src="../img/visa.png" class="card-img-top" alt="Budget Hotel">
+                    <div class="card-body">
+                        <h5 class="card-title">Cozy Room at City Stay Inn</h5>
+                        <p class="card-text">A comfortable and affordable option in the heart of the city, perfect for
+                            solo travelers and short stays.</p>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-star text-warning"></i> 3-Star Rating</li>
+                            <li><i class="fas fa-map-marker-alt text-danger"></i> London, UK</li>
+                            <li><i class="fas fa-bed text-primary"></i> Single or Double bed</li>
+                        </ul>
+                        <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    <!-- </div> -->
+    <main class="container-fluid mt-5 py-5 px-3">
+
+        <!-- Hero Section with Image and Text -->
+        <section id="services"
+            class="container-md rounded-5 shadow-lg text-white p-5 mb-5 d-flex flex-column flex-md-row align-items-center justify-content-center"
+            style="background-color: #1a202c;">
+            <!-- Left Side: Image with Creative Design -->
+            <div class="col-12 col-md-6 position-relative hero-image-container me-md-5 mb-4 mb-md-0"
+                id="hero-image-container">
+                <img src="../img/hotel3.png" alt="Luxury Hotel Suite" class="img-fluid rounded-4">
+                <div class="gradient-overlay rounded-4"></div>
+            </div>
+
+            <!-- Right Side: Services Text -->
+            <div class="col-12 col-md-6" id="hero-text-container">
+                <h1 class="display-4 fw-bolder mb-3">
+                    Hotel Reservations
+                </h1>
+                <p class="lead text-gray-300">
+                    Discover a <span class="text-info fw-semibold">wide range</span> of budget to luxury stays
+                    worldwide. We offer a seamless booking experience and personalized services to ensure your perfect
+                    trip.
+                </p>
+                <a href="#reservationForm" class="btn btn-primary btn-lg custom-btn mt-4">
+                    Explore Now
+                </a>
+            </div>
+        </section>
+
+        <!-- Reservation Form Section -->
+        <section id="reservationForm" class="container-md bg-white p-5 rounded-4 form-shadow">
+            <h2 class="h3 fw-bold text-center mb-4 text-dark">Book Your Stay</h2>
+            <form id="reservation-form" class="row g-4">
+                <div class="col-md-6">
+                    <label for="fullName" class="form-label fw-medium text-secondary">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="email" class="form-label fw-medium text-secondary">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="checkInDate" class="form-label fw-medium text-secondary">Check-in Date</label>
+                    <input type="date" id="checkInDate" name="checkInDate" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="checkOutDate" class="form-label fw-medium text-secondary">Check-out Date</label>
+                    <input type="date" id="checkOutDate" name="checkOutDate" class="form-control" required>
+                </div>
+                <div class="col-12">
+                    <label for="roomType" class="form-label fw-medium text-secondary">Room Type</label>
+                    <select id="roomType" name="roomType" class="form-select" required>
+                        <option value="">Select a room type...</option>
+                        <option value="standard">Standard</option>
+                        <option value="deluxe">Deluxe</option>
+                        <option value="suite">Suite</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="specialRequests" class="form-label fw-medium text-secondary">Special Requests</label>
+                    <textarea id="specialRequests" name="specialRequests" rows="4" class="form-control"></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg custom-btn">
+                        Submit Reservation
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Custom JavaScript for GSAP animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from("#hero-image-container", { duration: 1, x: -100, opacity: 0, ease: "power3.out" });
+            gsap.from("#hero-text-container", { duration: 1, x: 100, opacity: 0, ease: "power3.out", delay: 0.5 });
+            gsap.from("#reservationForm", { duration: 1, y: 50, opacity: 0, ease: "power2.out", delay: 1 });
+        });
+    </script>
+</body>
+
+</html>

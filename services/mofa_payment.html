@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Reservations</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<style>
+    :root {
+        --primary-color: #0d6efd;
+        /* Bootstrap blue */
+        --secondary-color: #6c757d;
+        --main-bg: #f8f9fa;
+        --card-bg: #ffffff;
+        --header-bg: #ffffff;
+    }
+
+    body {
+        font-family: 'Poppins', sans-serif;
+        background-color: var(--main-bg);
+        color: #343a40;
+    }
+
+    .header-shadow {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .hero-section {
+        background: linear-gradient(135deg, #0d6efd, #0056b3);
+        color: white;
+    }
+
+    .hero-card {
+        border-radius: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+
+    .payment-card {
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        border-radius: 1.5rem;
+        background-color: white;
+        z-index: 20;
+    }
+
+    .form-control,
+    .form-select {
+        border-radius: 0.5rem;
+        border-color: #ced4da;
+        transition: border-color 0.3s;
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    }
+
+    .custom-btn {
+        border-radius: 9999px;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+
+    <div id="header"></div>
+
+    <main class="container-fluid py-5 px-3">
+
+        <!-- Hero Section -->
+        <section
+            class="hero-section rounded-5 shadow-lg d-flex align-items-center justify-content-center mt-5 mb-5 p-5 text-center text-md-start">
+            <div class="container py-5">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-8" id="hero-text">
+                        <h1 class="display-4 fw-bolder mb-3">
+                            Ministry of Foreign Affairs Payments
+                        </h1>
+                        <p class="lead text-white opacity-75">
+                            Seamless and secure payment processing for government and consular services.
+                        </p>
+                    </div>
+                    <div class="col-12 col-md-4 mt-4 mt-md-0" id="hero-image">
+                        <div class="p-4 hero-card d-flex flex-column align-items-center">
+                            <i class="fa-solid fa-credit-card fa-4x mb-3 text-warning"></i>
+                            <h5 class="fw-bold mb-0">Secure Transactions</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Payment Form Section -->
+        <section id="paymentForm" class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="payment-card p-5">
+                        <h2 class="h3 fw-bold text-center mb-4 text-dark">Make a Payment</h2>
+                        <form id="mofa-form" class="row g-4">
+                            <div class="col-md-6">
+                                <label for="fullName" class="form-label fw-medium text-secondary">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" class="form-control" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-medium text-secondary">Email Address</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="serviceType" class="form-label fw-medium text-secondary">Service
+                                    Type</label>
+                                <select id="serviceType" name="serviceType" class="form-select" required>
+                                    <option value="">Select a service...</option>
+                                    <option value="visa-fee">Visa Fee</option>
+                                    <option value="passport-renewal">Passport Renewal</option>
+                                    <option value="document-attestation">Document Attestation</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="paymentAmount" class="form-label fw-medium text-secondary">Payment
+                                    Amount</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">$</span>
+                                    <input type="number" id="paymentAmount" name="paymentAmount" class="form-control"
+                                        min="0" step="0.01" required>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <label for="referenceNo" class="form-label fw-medium text-secondary">Reference Number
+                                    (if applicable)</label>
+                                <input type="text" id="referenceNo" name="referenceNo" class="form-control">
+                            </div>
+                            <div class="col-12 text-center mt-4">
+                                <button type="submit" class="btn btn-primary btn-lg custom-btn">
+                                    Proceed to Payment
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="../js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <!-- Custom JavaScript for GSAP animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from("#hero-text", { duration: 1, x: -100, opacity: 0, ease: "power3.out" });
+            gsap.from("#hero-image", { duration: 1, y: 100, opacity: 0, ease: "power3.out", delay: 0.5 });
+            gsap.from("#paymentForm", { duration: 1.5, y: 50, opacity: 0, ease: "power2.out", delay: 1 });
+        });
+    </script>
+</body>
+
+</html>

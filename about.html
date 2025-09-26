@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <style>
+        :root {
+            --primary-blue: #356ab2;
+            --secondary-green: #63bc63;
+            --accent-light-blue: #4caf50;
+            --accent-orange: #ee9b00;
+            --text-dark: #001219;
+            --text-light: #e9d8a6;
+            --background-light: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: var(--text-dark);
+        }
+
+        .hero-section {
+            /* background: linear-gradient(rgba(53, 106, 178, 0.7), rgba(53, 106, 178, 0.7)), url('./img/about.png') no-repeat center center; */
+            background: url('./img/about.png') no-repeat center center;
+            background-size: cover;
+
+            color: white;
+            padding: 200px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+        }
+
+        .card-body h5 {
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: var(--accent-orange);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+        }
+
+        .icon-circle i {
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .services-list ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .services-list li {
+            background-color: var(--background-light);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .services-list li i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-right: 15px;
+        }
+
+        @media (max-width: 991.98px) {
+            .text-center {
+                gap: 10px;
+            }
+        }
+
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Section -->
+    <div id="header"></div>
+    <div class="hero-section ">
+        <div class="container">
+            <!-- <h1>Our Story</h1>
+            <p>We are a passionate team dedicated to making your travel dreams come true.</p> -->
+        </div>
+    </div>
+
+    <!-- About Content Section -->
+    <div class="content-section">
+        <div class="container">
+            <div class="row g-4 align-items-center mission-container">
+                <div class="col-lg-6">
+                    <!-- Placeholder image used for single-file HTML -->
+                    <img src="./img/mission.png" alt="Our Team" class="img-fluid rounded-3 shadow">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3 text-dark">Our Mission & Values</h2>
+                    <p class="lead text-dark">
+                        Our mission is to simplify travel planning and provide seamless, affordable, and memorable
+                        experiences for every traveler. We believe in transparency, customer satisfaction, and building
+                        lasting relationships.
+                    </p>
+                    <p>
+                        Through innovative technology and a deep understanding of the travel industry, we aim to be your
+                        trusted partner for all your journeys, big or small. We are committed to offering the best
+                        prices without compromising on quality or service.
+                    </p>
+                    <div class="mt-4">
+                        <span class="badge bg-primary me-2 mb-2 py-2 px-5">Customer First</span>
+                        <span class="badge bg-success me-2 mb-2 py-2 px-5">Innovation</span>
+                        <span class="badge bg-warning text-dark me-2 mb-2 py-2 px-5">Reliability</span>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <div class="row text-center mt-5 ">
+                <div class="col-12">
+                    <h2 class="fw-bold mb-5">Why Choose Us?</h2>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class=" fas fa-star"></i>
+                            </div>
+                            <h5 class="card-title mt-3">One-Stop Digital Platform</h5>
+                            <p class="card-text">All travel solutions under a single
+                                website.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-plane-departure"></i>
+                            </div>
+                            <h5 class="card-title mt-3">Unbeatable Fares</h5>
+                            <p class="card-text">We guarantee competitive prices on flights worldwide.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h5 class="card-title mt-3">Secure Booking</h5>
+                            <p class="card-text">Your personal and payment information is always safe with us.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card p-4">
+                        <div class="card-body">
+                            <div class="icon-circle">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                            <h5 class="card-title mt-3">24/7 Support</h5>
+                            <p class="card-text">Our dedicated support team is here to assist you anytime, anywhere.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="my-5">
+
+            <!-- Our Services Section -->
+            <div class="row mt-5">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="fw-bold">Our Comprehensive Services</h2>
+                    <p class="lead">From flights to visas, we have all your travel needs covered.</p>
+                </div>
+                <div class="col-lg-8 mx-auto services-list">
+                    <ul>
+                        <li><i class="fas fa-plane"></i> Flight Ticket Booking – Domestic & International flights at
+                            competitive fares.</li>
+                        <li><i class="fas fa-hotel"></i> Hotel Reservations – Wide range of budget to luxury stays
+                            worldwide.</li>
+                        <li><i class="fas fa-notes-medical"></i> GAMCA Medical Test Booking – Hassle-free appointment
+                            scheduling for GCC medical requirements.</li>
+                        <li><i class="fas fa-file-invoice-dollar"></i> MOFA Payment - Ministry of Foreign Affairs</li>
+                        <li><i class="fas fa-clipboard-check"></i> Skill Verification Program (SVP) Appointments –
+                            Mandatory certification process booking for Saudi visa stamping.</li>
+                        <li><i class="fas fa-passport"></i> Visa Assistance – Support for tourist, business, and work
+                            visa applications.</li>
+                        <li><i class="fas fa-box"></i> Holiday Packages – Customized domestic & international travel
+                            packages.</li>
+                        <li><i class="fas fa-car"></i> Airport Transfers & Car Rentals – Easy transport arrangements.
+                        </li>
+                        <li><i class="fas fa-briefcase-medical"></i> Travel Insurance – Secure and reliable travel
+                            coverage.</li>
+                        <!-- <li><i class="fas fa-headset"></i> 24/7 Customer Support – Dedicated assistance for all travel
+                            needs.</li>
+                        <li><i class="fas fa-star"></i> One-Stop Digital Platform – All travel solutions under a single
+                            website.</li> -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+
+
+    <div id="footer"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+    <script>
+        // Register the GSAP ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Animate the Mission & Values section (new content)
+        gsap.from(".mission-container > div", {
+            opacity: 0,
+            x: (i) => (i % 2 === 0 ? -50 : 50), // Slide image from left, text from right
+            stagger: 0.2,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".mission-container",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+
+
+        // Animate the testimonial cards
+        gsap.from(".testimonial-card", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".testimonials-container",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+
+        // Animate the success story cards
+        gsap.from(".success-story-card", {
+            opacity: 0,
+            y: 50,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: ".success-stories-container",
+                start: "top 80%",
+                toggleActions: "play none none none"
+            }
+        });
+
+    </script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
