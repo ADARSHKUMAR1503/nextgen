@@ -1,5 +1,5 @@
 function loadHTML(elementId, filePath) {
-    fetch(filePath)
+    return fetch(filePath)
         .then(response => response.text())
         .then(data => {
             document.getElementById(elementId).innerHTML = data;
@@ -9,11 +9,52 @@ function loadHTML(elementId, filePath) {
         });
 }
 
-// Use relative paths based on current file location
+// Detect if in /services/ folder to adjust paths accordingly
 const isInServicesFolder = window.location.pathname.includes('/services/');
 
-loadHTML('header', isInServicesFolder ? '../header.html' : 'header.html');
+// Load header and footer dynamically with relative paths
+loadHTML('header', isInServicesFolder ? '../header.html' : 'header.html').then(() => {
+    setActiveNavLink(); // Run after header is loaded to highlight active nav link
+});
 loadHTML('footer', isInServicesFolder ? '../footer.html' : 'footer.html');
+
+// Function to add "active" class to current page nav link
+function setActiveNavLink() {
+    const currentPath = window.location.pathname === '/' ? '/' : window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        let linkPath = link.getAttribute('href');
+        if (linkPath === '' || linkPath === '/') {
+            linkPath = '/';
+        } else {
+            linkPath = linkPath.split('/').pop();
+        }
+
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// function loadHTML(elementId, filePath) {
+//     fetch(filePath)
+//         .then(response => response.text())
+//         .then(data => {
+//             document.getElementById(elementId).innerHTML = data;
+//         })
+//         .catch(error => {
+//             console.error('Error loading HTML:', error);
+//         });
+// }
+
+// // Use relative paths based on current file location
+// const isInServicesFolder = window.location.pathname.includes('/services/');
+
+// loadHTML('header', isInServicesFolder ? '../header.html' : 'header.html');
+// loadHTML('footer', isInServicesFolder ? '../footer.html' : 'footer.html');
 
 document.addEventListener("DOMContentLoaded", function () {
     if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {

@@ -1,7 +1,31 @@
+  html {
+      scroll-padding-top: 80px;
+      /* Approx navbar height */
+  }
+
   body {
       font-family: 'Poppins', sans-serif;
       background-color: #f8f9fa;
       color: #333;
+  }
+
+  html,
+  body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+  }
+
+  /* Check your main stylesheet for this and remove it if found */
+  body,
+  html {
+      overflow-x: hidden;
+      /* This one is usually okay */
+      /* BUT, if you see this, remove it or change it: */
+      overflow: hidden;
+      overflow-y: hidden;
+      overflow-y: scroll;
+      overflow: auto;
   }
 
   /* Color Palette */
@@ -15,7 +39,27 @@
       --background-light: #ffffff;
   }
 
+
+
+
   /* --- Components --- */
+  /* .navbar {
+      background-color: var(--background-light);
+      padding: 15px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s ease;
+      position: sticky;
+      top: 0;
+      z-index: 1030;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+  } */
+  #header {
+      position: sticky;
+      top: 0px;
+      z-index: 2000;
+  }
+
   .navbar {
       background-color: var(--background-light);
       padding: 15px 0;
@@ -23,9 +67,22 @@
       transition: all 0.3s ease;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      z-index: 1030;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
+      width: 100%;
+      /* Ensure full width sticky */
+      display: block;
+      /* Proper block layout */
+  }
+
+
+  /* Also check body and html for height and margin */
+  html,
+  body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
   }
 
   /* Enhanced shadow on scroll (you can add this with JS) */
