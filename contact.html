@@ -5,11 +5,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Contact Us | NextGen Leaders</title>
+    <link rel="icon" href="/img/logo1.png" type="image/x-icon" />
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+<style>
+    .header-section {
+        background-color: var(--primary-blue);
+        color: white;
+        padding: 60px 0;
+        margin-bottom: 40px;
+    }
+
+    .section-title {
+        color: var(--primary-blue);
+        font-weight: 700;
+        margin-top: 30px;
+        /* margin-bottom: 30px; */
+        display: inline-block;
+        padding-bottom: 5px;
+        border-bottom: 3px solid var(--secondary-green);
+    }
+
+    /* Card Styles */
+    .contact-card {
+        border: none;
+        border-radius: 12px;
+        border-left: 5px solid var(--secondary-green);
+        border-bottom: 5px solid var(--secondary-green);
+        box-shadow: 0 4px 12px var(--card-shadow);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        height: 100%;
+        overflow: hidden;
+        padding: 5px;
+    }
+
+    .card-body {
+        padding: 10px 15px;
+    }
+
+    .contact-card:hover {
+        box-shadow: 0 8px 25px rgba(53, 106, 178, 0.2);
+        border-left-color: var(--primary-blue);
+        border-bottom-color: var(--primary-blue);
+        transform: translateY(-4px);
+    }
+
+    .card-header-label {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary-blue);
+        background-color: #f1f1f1;
+        padding: 10px;
+        margin: 0;
+        border-radius: 5px;
+        width: 90%;
+        text-align: center
+            /* border-bottom: 1px solid #e0e0e0; */
+    }
+
+    .address-text {
+        color: #555;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-top: 5px;
+    }
+
+    /* Links and Icons */
+    .info-link {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        transition: color 0.2s;
+    }
+
+    .info-link:hover {
+        color: var(--primary-blue);
+    }
+
+    .info-icon {
+        color: var(--secondary-green);
+        margin-right: 10px;
+        font-size: 1.1rem;
+        width: 20px;
+        /* fixed width for alignment */
+    }
+
+    .map-link {
+        color: white;
+        color: var(--primary-blue);
+        border: 1px solid var(--primary-blue);
+        border-radius: 8px;
+        font-weight: 600;
+        padding: 10px 20px;
+        transition: background-color 0.2s;
+    }
+
+    .map-link:hover {
+        background-color: var(--secondary-green);
+        color: white;
+    }
+
+
+    /* Force cards to be same height */
+    #india-locations-container .card .contact-card,
+    #overseas-locations-container .card .contact-card {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+        border: none;
+        border-radius: 12px;
+        border-left: 5px solid var(--secondary-green);
+        border-bottom: 5px solid var(--secondary-green);
+        box-shadow: 0 4px 12px var(--card-shadow);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        overflow: hidden;
+        padding: 5px;
+
+    }
+
+
+
+    /* Ensure card body grows to push button down */
+    #india-locations-container .contact-card .card-body,
+    #overseas-locations-container .contact-card .card-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 10px 15px;
+    }
+
+    .location .btn {
+        padding: 2px 15px;
+        font-weight: 700;
+        font-size: xx-large;
+        color: var(--secondary-green);
+        border: 1px solid var(--secondary-green);
+    }
+
+    .location .btn:hover {
+        background-color: var(--secondary-green);
+        color: white;
+    }
+
+    .location .btn.active {
+        background-color: var(--primary-blue);
+        color: white !important;
+        border-color: var(--primary-blue);
+    }
+
+    @media (min-width:1440px) {
+
+
+        .address-text {
+            min-width: 350px;
+        }
+    }
+</style>
 
 <body>
     <div id="header"></div>
@@ -114,13 +274,511 @@
         </div>
         </div>
     </section>
+    <div class="container pb-5">
+        <div class="text-center " style="
+            /* background: linear-gradient(135deg, #00c9ff 0%, #92fe9d 100%); */
+            border-radius: 30px;
+            box-shadow:  5px 5px  20px 1px rgba(0, 0, 0, 0.1);
+            color: white;
+        ">
+            <h2 class="section-title mb-3" style="font-weight: 700; font-size: 2.5rem; border: none;">
+                Explore Our Worldwide Presence and Connect with Us
+            </h2>
+            <!-- <p class="section-subtitle fs-5 fw-medium">
+                        Comprehensive solutions for a hassle-free travel experience.
+                    </p> -->
+        </div>
+        <!-- <h2 style="text-align: center; font-weight: 700;">Explore Our Worldwide Presence and Connect with Us</h2> -->
+        <!-- CORPORATE & HEAD OFFICE SECTION -->
+        <h2 class="section-title">Corporate & Head Offices (India)</h2>
+        <div class="row mb-5"
+            style="background:  radial-gradient(circle,rgba(13, 101, 217, 1) 0%, rgba(13, 101, 217, 1) 100%); padding: 10px; border-radius: 15px;">
+
+            <!-- Corporate Office Card -->
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="card contact-card h-100">
+                    <p class="card-header-label mb-0">Corporate Office (ASMACS LIMITED)</p>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-map-marker-alt info-icon"></i> Address
+                            </h6>
+                            <p class="address-text mb-2">
+                                411, Sai Chamber, 4th Floor, Santacruz (E), Mumbai – 400 055, India
+                            </p>
+                        </div>
+
+                        <div class="mb-2">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-phone info-icon"></i> Phone
+                            </h6>
+                            <p class="mb-2">+91 22 26125301 / 26125191 / 69090786</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-envelope info-icon"></i> Email
+                            </h6>
+                            <a href="mailto:asmacs@asmacsglobal.com" class="info-link">asmacs@asmacsglobal.com</a>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/tbP6NqL2QKhJ7qX38" target="_blank"
+                            class="btn btn-sm map-link w-100">
+                            <i class="fas fa-location-arrow"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Head Office Card -->
+            <div class="col-lg-4 col-md-6 mb-3">
+                <div class="card contact-card h-100">
+                    <p class="card-header-label mb-0">Head Office (ASMACS LIMITED)</p>
+                    <div class="card-body">
+                        <div class="mb-2">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-map-marker-alt info-icon"></i> Address
+                            </h6>
+                            <p class="address-text mb-2">
+                                123, Atlanta, 12th Floor, Nariman Point, Mumbai – 400 021, India
+                            </p>
+                        </div>
+
+                        <div class="mb-2">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-phone info-icon"></i> Phone
+                            </h6>
+                            <p class="mb-2">+91 22 22885426 / 22885427 / 22856306</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <h6 class="text-muted small fw-bold mb-1">
+                                <i class="fas fa-envelope info-icon"></i> Email
+                            </h6>
+                            <a href="mailto:asmacs@asmacsglobal.com" class="info-link">asmacs@asmacsglobal.com</a>
+                        </div>
+
+                        <a href="https://maps.app.goo.gl/GyW8iaExBu58S66Q8" target="_blank"
+                            class="btn btn-sm map-link w-100">
+                            <i class="fas fa-location-arrow"></i> Get Directions
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Google Map Card -->
+            <div class="col-lg-4 col-md-12 mb-3">
+                <div class="card contact-card p-0 h-100 overflow-hidden">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.5871158663585!2d72.84028941418521!3d19.0818825870845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c85bdab95dbb%3A0xbf9570547acd2628!2sAsmacs%20Group!5e0!3m2!1sen!2sin!4v1575458038752!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0; min-height: 320px;" allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- INDIA LOCATIONS SECTION -->
+        <!-- <h2 class="section-title">Branch Locations in India</h2> -->
+        <div class="" style="padding: 10px;    border: 2px solid #bbbbbb;    border-radius: 5px;">
+            <div class="align-items-center mb-3">
+                <!-- <h2 class="section-title mb-0">Branch Locations</h2> -->
+                <div class="location"
+                    style="    padding: 10px;    border: 2px solid #bbbbbb; border-top: none;    border-radius: 5px;">
+                    <button id="btn-india" class="btn  btn-sm me-2 active">India</button>
+                    <button id="btn-overseas" class="btn  btn-sm">Overseas</button>
+                </div>
+            </div>
+
+            <!-- <div class="row g-4 mb-5" id="india-locations-container">
+        </div> -->
+            <div id="india-section">
+                <div class="row g-4 mb-5" id="india-locations-container">
+                    <!-- India branch cards will be injected here -->
+                </div>
+            </div>
+            <div id="overseas-section" style="display: none;">
+                <div class="row g-4" id="overseas-locations-container">
+                    <!-- Overseas branch cards will be injected here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- OVERSEAS LOCATIONS SECTION -->
+        <!-- <h2 class="section-title">Overseas Locations</h2>
+        <div class="row g-4" id="overseas-locations-container">
+        </div> -->
+    </div>
+
+    <!-- Include Bootstrap JS Bundle -->
+
+
     <div id="footer"></div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.js"></script>
+    <script>
+        // Data Object containing all contact details, structured for easy rendering.
+        // NOTE: The data has been parsed and cleaned from the uploaded file content.
+        const contactData = {
+
+            indiaLocations: [
+                {
+                    city: "Mumbai",
+                    name: "ASMACS Group",
+                    address: "411, Sai Chamber, 4th Floor, Santacruz (E), Mumbai - 400 055, India",
+                    emails: ["asmacs@asmacsglobal.com"],
+                    phones: ["+91 2226125301", "+91 2269090786", "+91 2226125191"],
+                    mapLink: "https://maps.app.goo.gl/hu6ARuoLzM2ZDoZp8"
+                },
+                {
+                    city: "Bhubaneswar",
+                    name: "ASMACS Group",
+                    address: "House No. 6, Plot No. 17, Archana Vihar, Khandagiri, Bhubaneswar – 751 030, Odisha, India.",
+                    emails: ["bbsr4@asmacs.net", "bbsr1@asmacsglobal.com"],
+                    phones: ["+91-674-2384579", "+91-674-2384517", "+91-9338055297", "+91-8456062287"],
+                    mapLink: "https://maps.app.goo.gl/TBTpLAn2T2VVtNQv7"
+                },
+                {
+                    city: "Kochi",
+                    name: "ASMACS Group",
+                    address: "Plot No. 39/4022, Opp. Sri Krishna Lodge, Ravipuram Road, Kochi – 682 016, Kerala, India.",
+                    emails: ["cochin1@ashutoshmarine.com", "cochin@ashutoshmarine.com"],
+                    phones: ["+91 484 4029243", "+91 484 4619176", "+91 9846031729"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS/@9.9608739,76.2875745,17z/data=!3m1!4b1!4m5!3m4!1s0x3b0872b999c02f51:0xcbdf221c1f2423eb!8m2!3d9.9608739!4d76.2897632"
+                },
+                {
+                    city: "Chennai",
+                    name: "ASMACS Group",
+                    address: "2, KV Colony, 6th Street, 2nd Floor, Sree Ganesh Building, Off Arya Gowda Road, West Mambalam, Chennai – 600 033, India.",
+                    emails: ["chennai@asmacstourstravel.com"],
+                    phones: ["+91 44 24740857", "+91 44 24740858"],
+                    mapLink: "https://www.google.com/maps/dir//Asmacs,+Jai+Auto,+2+Sree+Ganesh+Building+2+6th+Street,+Arya+Gowda+Road+Next+to+Bajaj,+West+Mambalam,+Chennai,+Tamil+Nadu+600033/@13.0374656,80.217988,1119m/data=!3m1!1e3!4m8!4m7!1m0!1m5!1m1!1s0x3a526624cb4609ab:0x767ccf521efd25fc!2m2!1d80.2201767!2d13.0374656?entry=ttu"
+                },
+                {
+                    city: "Madurai",
+                    name: "ASMACS Group",
+                    address: "Plot No. 8/665, Sivagangai Road, N. Perumalpatty, Melur (TK), Madurai (Dist), Tamilnadu – 625106, India.",
+                    emails: ["madurai@asmacstoursandtravel.com"],
+                    phones: ["+91 452 2915301"],
+                    mapLink: "https://www.google.com/maps/search/Plot+No.+8%2F665,+Sivagangai+Road,+N.+Perumalpatty,+Melur+(TK),+Madurai+(Dist),+Tamilnadu+%E2%80%93+625106,+India./@9.9732158,78.1808118,12z/data=!3m1!4b1"
+                },
+                {
+                    city: "Goa",
+                    name: "ASMACS Group",
+                    address: "25 F, Mapol, Opp. Fr. Agnel Ashram, Behind Hero Honda Show Room, Salcete, Verna, Goa – 403604, India.",
+                    emails: ["goa@asmmacs.net"],
+                    phones: ["+918322791842", "+918322791841", "+91832 2791840"],
+                    mapLink: "https://www.google.com/maps/search/25+F,+Mapol,+Opp.+Fr.+Agnel+Ashram,+Behind+Hero+Honda+Show+Room,+Salcete,+Verna,+Goa+%E2%80%93+403604,+India/@15.3285911,73.9317481,17z/data=!3m1!4b1"
+                },
+                {
+                    city: "Hyderabad",
+                    name: "ASMACS Group",
+                    address: "H No: 1-2-597/27, Om Sai Arcade, Eshwari Complex, 2nd Floor, Flat 201, Lower tank bund, Domalguda, Opp. Katta Maisama Temple, Near Secretariat Flyover, Hyderabad – 500029, India.",
+                    emails: ["hyderabad1@asmmacs.net"],
+                    phones: ["+91 40 65140274", "+91 40 65140276"],
+                    mapLink: "https://www.google.com/maps/place/Sri+Kanakala+Katta+Maisamma+Temple/@17.4128992,78.4760661,17z/data=!3m1!4b1!4m5!3m4!1s0x3bcb99e3aa3e9d17:0xa654140281fdf14d!8m2!3d17.4128992!4d78.4782548"
+                },
+                {
+                    city: "Visakhapatnam",
+                    name: "ASMACS Group",
+                    address: "Dr No: 65-4-1, 109, 1st Floor, Aruna China Appa Rao Complex, Mulgada Colony, Sriharipuram, Visakhapatnam – 530 011, India.",
+                    emails: ["asmacs@asmacseng.com"],
+                    phones: ["+91-891-6566451"],
+                    mapLink: "https://www.google.com/maps/search/Dr+No:+65-4-1,+109,+1st+Floor,+Aruna+China+Appa+Rao+Complex,+Mulgada+Colony,+Sriharipuram,+Visakhapatnam+%E2%80%93+530+011,+India./@17.6868481,83.2163085,17z/data=!3m1!4b1"
+                },
+                {
+                    city: "Andaman & Nicobar Islands",
+                    name: "ASMACS Group",
+                    address: "ASMACS,35, MA ROAD, PHOENIX BAY, SRI VIJAYA PURAM, SOUTH ANDAMAN - 744102, ANDAMAN & NICOBAR ISLANDS",
+                    emails: ["portblair@asmacseng.com"],
+                    phones: ["03192488864"],
+                    mapLink: "https://maps.app.goo.gl/3irCdgmtHGPocwX57"
+                }
+            ],
+            overseasLocations: [
+                {
+                    country: "UAE - Dubai",
+                    name: "ASMACS SUPPORT SERVICE",
+                    address: "PO Box-48759, Dubai, UAE",
+                    emails: ["asmacs@asmacs.ae"],
+                    phones: ["+971 43362664", "+971 43362667"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS+Support+Services/@25.2437983,55.3086053,17z/data=!3m1!4b1!4m5!3m4!1s0x3e5f42d44294d103:0x65ddb9a7a261bd73!8m2!3d25.2437983!4d55.310794"
+                },
+                {
+                    country: "UAE - Dubai",
+                    name: "ASMACS ENGINEERING LLC",
+                    address: "PO Box-117274, Dubai, UAE",
+                    emails: ["asmacs@asmacs.ae"],
+                    phones: ["+971 43362664", "+971 43362667"],
+                    mapLink: "https://www.google.com/maps/search/ASMACS+ENGINEERING+LLC+PO+Box-117274,+Dubai,+UAE./@25.0750853,54.9475523,10z/data=!3m1!4b1"
+                },
+                {
+                    country: "UAE - Sharjah",
+                    name: "ASMACS FZE",
+                    address: "PO Box-42205, Hamriyah Free Zone, Sharjah, UAE",
+                    emails: ["asmacs@asmacs-fze.ae"],
+                    phones: ["+971 65260711", "+971 65260712"],
+                    mapLink: "https://www.google.com/maps/place/Asmacs/@25.463502,55.4996093,17z/data=!4m8!1m2!2m1!1sASMACS+FZE+PO+Box-42205,+Hamriyah+Free+Zone,+Sharjah,+UAE.!3m4!1s0x3ef5f87d45414409:0xf3cc3fafe93b0b31!8m2!3d25.463502!4d55.501798"
+                },
+                {
+                    country: "Kuwait",
+                    name: "ASMACS GENERAL TRADING COMPANY WLL",
+                    address: "PO Box-47958, Green Tower, 6th Floor, Al Dabbous St. Al Fahahel-64030, Kuwait",
+                    emails: ["asmacs@asmacskuwait.com"],
+                    phones: ["+965 25456786"],
+                    mapLink: "http://binged.it/M8nlKq"
+                },
+                {
+                    country: "KSA - Dammam",
+                    name: "ASMACS CONT. EST. DAMMAM",
+                    address: "PO Box-4799 Dammam -31412, KSA",
+                    emails: ["asmacs@asmacs.com.sa"],
+                    phones: ["+966138283601", "+966138283602", "+966138283603"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS/@26.4364174,50.1022596,17z/data=!3m1!4b1!4m5!3m4!1s0x3e49fb7e55555555:0x960fb0183fe7e428!8m2!3d26.4364174!4d50.1044483"
+                },
+                {
+                    country: "KSA - Riyadh",
+                    name: "ASMACS RIYADH",
+                    address: "Office No-40713, Khaldia Towers, 7th Floor, Al-Khazzan St Imam-Faisal-Bin-Turki, Riyadh, KSA",
+                    emails: ["salesriyadh@asmacs.com.sa"],
+                    phones: ["+966114092697", "+966114092698"],
+                    mapLink: "https://www.google.com/maps/place/Asmacs+Riyadh/@24.6387081,46.7107175,17z/data=!3m1!4b1!4m5!3m4!1s0x3e2f05a962d001cd:0x641db3b32015eacc!8m2!3d24.6387081!4d46.7129062?shorturl=1"
+                },
+                {
+                    country: "KSA - Jeddah",
+                    name: "ASMACS CONT. EST. JEDDAH",
+                    address: "Al-Makarounah RD-64, Wadi Wejj Street, Azizyah Area, Jeddah – 21382, KSA",
+                    emails: ["salesjeddah@asmacs.com.sa"],
+                    phones: ["+966 12 6710041"],
+                    mapLink: "https://www.google.com/maps/place/Asmacs/@21.5544066,39.1907007,17z/data=!4m5!3m4!1s0x15c3d035a6a24405:0x84b161910d2b9f38!8m2!3d21.5544066!4d39.1928894"
+                },
+                {
+                    country: "Oman",
+                    name: "ASMACS LLC",
+                    address: "Po Box-116, PC-568, Mina Al Fahal, Muscat, Oman",
+                    emails: ["asmacs@asmacs.ae"],
+                    phones: ["+968 97269624"],
+                    mapLink: "https://www.google.com/maps/search/Po+Box-116,+PC-568,+Mina+Al+Fahal,+Muscat,+Oman./@23.6246927,58.5043148,15z/data=!3m1!4b1"
+                },
+                {
+                    country: "Qatar - Doha",
+                    name: "ASMACS SUPPORT SERVICE WLL",
+                    address: "PO Box-30817, Doha, Qatar",
+                    emails: ["asmacs@asmacsqatar.com.qa", "qatar@asmacsglobal.com"],
+                    phones: ["+974 44513940", "+974 44513941"],
+                    mapLink: "https://www.google.com/maps/place/Asmacs+Support+Services+WLL/@25.1683862,51.5958493,17z/data=!3m1!4b1!4m5!3m4!1s0x3e45cc7f46307bd7:0xb596af5ab8d4464e!8m2!3d25.1683862!4d51.598038"
+                },
+                {
+                    country: "Qatar - Doha",
+                    name: "ASMACS RECRUITMENT SERVICE LLC",
+                    address: "PO Box-30817, Doha, Qatar",
+                    emails: ["recruitment@asmacsqatar.com.qa", "qatar@asmacsglobal.com"],
+                    phones: ["+974 44513940", "+974 44513941"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS+RECRUITMENT+SERVICE+LLC-QATAR/@25.1684225,51.5957887,17z/data=!3m1!4b1!4m5!3m4!1s0x3e45cc7f49a497bb:0xb737913acd0be7d7!8m2!3d25.1684225!4d51.5979774"
+                },
+                {
+                    country: "Philippines",
+                    name: "ASMACS RECRUITMENT SERVICES INC.",
+                    address: "426, Bulalakaw St, Plainview Subdivision Mandaluyong City, Metro Manila, Philippines.",
+                    emails: ["asmacs@asmacs.com.ph"],
+                    phones: ["+632 4774406"],
+                    mapLink: "https://www.google.com/maps/place/Asmacs+Recruitment+Services+Inc./@14.5749764,121.0311879,17z/data=!3m1!4b1!4m5!3m4!1s0x3397c9b32cefd4e9:0x867bb2334212894c!8m2!3d14.5749764!4d121.0333766"
+                },
+                {
+                    country: "Bahrain",
+                    name: "ASMACS SUPPORTS SERVICE CO.WLL / ASMACS MANPOWER & SERVICES S.P.C.",
+                    address: "Office No: 72, AL Khariya Tower, Building No. 240, Block No. 317, Road No. 1704, Diplomatic Area, Bahrain",
+                    emails: ["asmacsbh@asmacsbh.com"],
+                    phones: ["+973 1781 3129", "+973 1781 3107"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS/@26.2140601,50.6062559,167m/data=!3m1!1e3!4m8!1m2!2m1!1sasmacs!3m4!1s0x3e49a93da0e2a961:0x652bc673f7aead9c!8m2!3d26.2141667!4d50.6060964"
+                },
+                {
+                    country: "Sri Lanka",
+                    name: "ASMACS",
+                    address: "69/A -1/1, Galle Road, Dehiwala South Postal Code-10350, Sri Lanka.",
+                    emails: ["Srilanka@asmacs.net"],
+                    phones: ["+94 114 334 777"],
+                    mapLink: "https://www.google.com/maps/search/69%2FA+-1%2F1,+Galle+Road,+Dehiwala+South+Postal+Code-10350,+Srilanka./@6.8791646,79.8577655,17z/data=!3m1!4b1"
+                },
+                {
+                    country: "Nepal",
+                    name: "AL ASMACS CO. PVT LTD",
+                    address: "Po Box-25911, Narayan Gola Chowk, Maharajgunj, Chakrapath, Sallaghari, Kathmandu, Nepal.",
+                    emails: ["alasmacs@asmacs.com.np"],
+                    phones: ["+977 1 4650470", "+977 1 4650471", "+977 1 4650472"],
+                    mapLink: "https://www.google.com/maps/search/Po+Box-25911,+Narayan+Gola+Chowk,+Maharajgunj,+Chakrapath,+Sallaghari,+Kathmandu,+Nepal./@27.6841695,85.2998293,17z/data=!3m1!4b1"
+                },
+                {
+                    country: "Bangladesh",
+                    name: "ASMACS",
+                    address: "House #55, Road #03, Block B, Niketon, Gulshan -1, Dhaka, Bangladesh.",
+                    emails: ["asmacs@asmacsglobal.com"],
+                    phones: ["+88-01711321470", "+88-01611261308"],
+                    mapLink: "https://www.google.com/maps/place/ASMACS/@23.7747658,90.4128255,18z/data=!4m8!1m2!2m1!1sASMACS+House%2355,+Road+%2303,+Block+B,+Niketon,+Gulshan+-1,+Dhaka,+Bangladesh.!3m4!1s0x3755c713d85f4e45:0xeef708cec1557100!8m2!3d23.7753952!4d90.4157381"
+                },
+                {
+                    country: "Ghana",
+                    name: "ASMACS",
+                    address: "P.O Box 1299, 81 Dansoman Road, GA-504-4399, Dansoman-Accra, Accra-Ghana",
+                    emails: ["acmacsgh@asmacsgh.com"],
+                    phones: ["+233302317991", "+233208100264"],
+                    mapLink: "https://goo.gl/maps/zbi62ehLNcxz6mTe7"
+                },
+                {
+                    country: "USA",
+                    name: "ASMACS LLC",
+                    address: "8 The Green, Suite 101117, Dover, DE 19901-3618",
+                    emails: ["asmacsusa@asmacsusa.com"],
+                    phones: ["+1 (302) 480-9799"],
+                    mapLink: "https://www.google.com/maps/place/A+Registered+Agent/@39.1567775,-75.5264525,17z/data=!3m1!4b1!4m5!3m4!1s0x89c6fcc462ab79e5:0x91780b13d0c87d54!8m2!3d39.1567775!4d-75.5242638"
+                },
+                {
+                    country: "Japan",
+                    name: "FIDEL TECHNOLOGIES KK",
+                    address: "Kudan Plaza Bldg 7F, Kudan Minami 2-2-3, Chiyoda Ku, Tokyo 102-0074.",
+                    emails: ["admin@asmacsjp.com", "info@asmacsjp.com"],
+                    phones: ["+81 3 4578 9027", "+81 3 4578 2198"],
+                    mapLink: "https://www.google.com/maps/search/Kudan+Plaza+Bldg+7F,+Kudan+Minami+2-2-3,+Chiyoda+Ku,+Tokyo+102-0074./@35.6938999,139.7444848,17z/data=!3m1!4b1"
+                },
+                {
+                    country: "Korea",
+                    name: "ASMACS",
+                    address: "Room No. 303, Seocho Jeil Building, 1624-2, Seocho-Dong, Seocho-Gu, Seoul, Korea",
+                    emails: ["info@asmacs.co.kr"],
+                    phones: ["+82 2 584 0113"],
+                    mapLink: "https://goo.gl/maps/qWfEDTz3rEBPZkgQ7"
+                },
+                {
+                    country: "Romania",
+                    name: "ASMACS S.R.L.",
+                    address: "Bucharest District 1, No. 11 ION CÎMPINEANU Street, Room 6.02, Floor 6, Romania Postal Code: 010031",
+                    emails: ["info@asmacs.ro"],
+                    phones: ["+40 31 419 00 11"],
+                    mapLink: "https://maps.app.goo.gl/QDY898xwXUQj6mUEA"
+                }
+            ]
+        };
+
+
+        function createOfficeCard(office) {
+            // Determine the main label/title for the card
+            const cardLabel = office.type || office.city || office.country;
+            const companyName = office.name;
+
+            // Generate HTML for phone links
+            const phoneContent = office.phones.map(p => {
+                // Remove spaces and hyphens for the tel: link to ensure maximum compatibility
+                const cleanPhone = p.replace(/\s/g, '').replace(/\-/g, '');
+                return `
+                   
+                        
+                        <p>${p}</p>
+                    
+                `;
+            }).join('');
+
+            // Generate HTML for email links
+            const emailContent = office.emails.map(e => `
+                <a href="mailto:${e}" class="info-link">
+                    
+                     ${e}
+                </a>
+            `).join('');
+
+            return `
+                <div class="col-lg-4 col-md-6">
+                    <div class="card contact-card">
+                        <p class="card-header-label mb-0">${cardLabel} (${companyName})</p>
+                        <div class="card-body">
+                            
+                            <!-- Address Section -->
+                            <div class="mb-1">
+                                <h6 class="text-muted small fw-bold mb-1"><i class="fas fa-map-marker-alt info-icon" style="color: var(--primary-blue);"></i> Address</h6>
+                                <p class="address-text">${office.address}</p>
+                            </div>
+                            
+                            <!-- Contact Section -->
+                            <div class="mb-1">
+                                <h6 class="text-muted small fw-bold mb-1"><i class="fas fa-phone info-icon" style="color: var(--primary-blue);"></i> Phone</h6>
+                                ${phoneContent}
+                            </div>
+                            
+                            <!-- Email Section -->
+                            <div class="mb-1">
+                                <h6 class="text-muted small fw-bold mb-1"><i class="fas fa-envelope info-icon" style="color: var(--primary-blue);"></i> Email</h6>
+                                ${emailContent}
+                            </div>
+                            
+                            <!-- Map Link Button -->
+                            <a href="${office.mapLink}" target="_blank" class="btn btn-sm mt-2 map-link w-100">
+                                <i class="fas fa-location-arrow"></i> Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        /**
+         * Renders all contact data into the respective HTML containers.
+         */
+        function renderContactPage() {
+            // const mainContainer = document.getElementById('main-offices-container');
+            const indiaContainer = document.getElementById('india-locations-container');
+            const overseasContainer = document.getElementById('overseas-locations-container');
+
+            // Render Main Offices (Corporate & Head)
+
+            // Render India Locations
+            contactData.indiaLocations.forEach(office => {
+                indiaContainer.innerHTML += createOfficeCard(office);
+            });
+
+            // Render Overseas Locations
+            contactData.overseasLocations.forEach(office => {
+                overseasContainer.innerHTML += createOfficeCard(office);
+            });
+        }
+
+        // Run the rendering function when the page content is fully loaded
+        // document.addEventListener('DOMContentLoaded', renderContactPage);
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Render the contact cards
+            renderContactPage();
+
+            const btnIndia = document.getElementById('btn-india');
+            const btnOverseas = document.getElementById('btn-overseas');
+            const indiaSection = document.getElementById('india-section');
+            const overseasSection = document.getElementById('overseas-section');
+
+            btnIndia.addEventListener('click', () => {
+                indiaSection.style.display = 'block';
+                overseasSection.style.display = 'none';
+                btnIndia.classList.add('active');
+                btnOverseas.classList.remove('active');
+            });
+
+            btnOverseas.addEventListener('click', () => {
+                indiaSection.style.display = 'none';
+                overseasSection.style.display = 'block';
+                btnOverseas.classList.add('active');
+                btnIndia.classList.remove('active');
+            });
+        });
+    </script>
+
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>

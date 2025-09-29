@@ -131,6 +131,13 @@
       border-radius: 8px;
   }
 
+  @media (max-width:1200px) {
+
+      .navbar-nav .nav-link {
+          margin: 0 10px;
+      }
+  }
+
   /* Active State Styling */
   .navbar-nav .nav-link.active {
       color: var(--secondary-green) !important;
@@ -212,6 +219,8 @@
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+
+
   /* Show Dropdown on Hover with Animation */
   .nav-item.dropdown:hover .dropdown-menu,
   .nav-item.dropdown .dropdown-menu:hover {
@@ -284,6 +293,8 @@
           box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
       }
 
+
+
       .navbar-nav .nav-link {
           margin: 8px 0;
           padding: 15px 20px !important;
@@ -316,6 +327,22 @@
       }
   }
 
+  @media (max-width:992px) {
+      .dropdown-menu {
+          max-height: 200px;
+          overflow: auto;
+      }
+
+      .navbar-nav .nav-link {
+          padding: 5px 20px !important;
+          margin: 0px;
+      }
+
+      .navbar-nav {
+          /* align-items: flex-start; */
+      }
+  }
+
   /* Additional Animation for Page Load */
   @keyframes fadeInDown {
       from {
@@ -344,6 +371,7 @@
       outline: 2px solid var(--secondary-green);
       outline-offset: 2px;
       border-radius: 8px;
+      max-width: 236px;
   }
 
   .btn-primary {
@@ -423,9 +451,22 @@
       color: var(--primary-blue);
   }
 
-  .hero h1 .highlight {
-      color: var(--secondary-green);
+  .hero h1 .highlight-full {
+      background-color: white;
+      color: var(--primary-blue);
+      /* default color for "Next" */
+      padding: 8px 20px;
+      display: inline-block;
+      font-weight: bold;
+      clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
   }
+
+  .hero h1 .highlight-full .green {
+      color: var(--secondary-green);
+      /* just change color of "Gen" */
+  }
+
+
 
   .hero-images .img-container {
       border-radius: 20px;
@@ -802,14 +843,16 @@
       height: 45px;
       line-height: 45px;
       text-align: center;
-      background: rgba(255, 255, 255, 0.15);
+      background: #fff;
       border-radius: 50%;
       margin-right: 15px;
       transition: background 0.3s ease;
+      color: #6abe65;
   }
 
   .contact-info .info-item:hover i {
-      background: rgba(255, 255, 255, 0.3);
+      background: #6abe65;
+      color: #fff;
   }
 
   .contact-info .info-item p {
@@ -820,11 +863,13 @@
 
   /* --- Right Side: Contact Form --- */
   .contact-form .form-control {
-      background: #ffffff8f;
+      /* background: #4242429c; */
+      background: linear-gradient(165deg, #0f4877, #030f443a);
+
       border: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 8px;
       padding: 0.9rem 1.2rem;
-      color: white;
+      color: #f8faff;
       transition: background 0.3s ease;
   }
 
